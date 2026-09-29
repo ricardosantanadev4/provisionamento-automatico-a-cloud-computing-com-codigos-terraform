@@ -12,6 +12,15 @@ provider "aws" {
   region = var.region
 }
 
+default_tags {
+    tags = {
+      Ambiente      = var.ambiente
+      Projeto       = "provisionamento-automatico"
+      GerenciadoPor = "Terraform"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "meu_bucket" {
   bucket = var.bucket_name
 }
