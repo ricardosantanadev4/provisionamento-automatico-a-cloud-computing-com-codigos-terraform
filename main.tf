@@ -24,3 +24,10 @@ default_tags {
 resource "aws_s3_bucket" "meu_bucket" {
   bucket = var.bucket_name
 }
+
+resource "aws_s3_bucket_versioning" "meu_bucket" {
+  bucket = aws_s3_bucket.meu_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
