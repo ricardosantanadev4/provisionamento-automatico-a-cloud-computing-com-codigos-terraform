@@ -31,3 +31,12 @@ resource "aws_s3_bucket_versioning" "meu_bucket" {
     status = "Enabled"
   }
 }
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "meu_bucket" {
+  bucket = aws_s3_bucket.meu_bucket.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
