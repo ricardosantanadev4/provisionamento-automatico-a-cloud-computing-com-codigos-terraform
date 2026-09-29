@@ -1,0 +1,17 @@
+# Arquivos de estado (CRÍTICO: contêm dados sensíveis)
+*.tfstate
+*.tfstate.*
+
+# Cache do Terraform (módulos e provedores)
+.terraform/
+
+# Arquivos de variáveis com segredos
+
+
+# Overrides e chaves
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.pem
+*.key
